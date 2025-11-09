@@ -1,40 +1,53 @@
-# ExpenseTracker (JDBC + MySQL) - Mini Project
+# 💰 ExpenseTracker (JDBC + MySQL) - Mini Project
 
-## Files
-- Main.java
-- create_db.sql
+A simple **console-based Java project** for tracking daily expenses using **JDBC** with **MySQL** integration.  
+This project allows users to **Add, View, Update, Delete**, and **Summarize** expenses by category.  
+Perfect for **college submissions**, **JDBC practice**, and **database connectivity demonstrations**. 🚀
 
-## Requirements
-- JDK 8+ (17 recommended)
-- MySQL server
-- MySQL Connector/J (.jar)
+---
 
-## Setup
-1. Run `create_db.sql` in MySQL Workbench or CLI.
-2. Put `mysql-connector-j-x.x.x.jar` in project folder or set classpath.
+## 🧠 Features
+- Add new expense entries  
+- View all expenses  
+- Filter expenses by category  
+- Update expense amount by ID  
+- Delete expense records  
+- View total spending by category  
 
-## Build & Run
-(Windows)
-javac Main.java
-java -cp .;mysql-connector-j-9.0.0.jar Main
+---
 
-(Linux/Mac)
-javac Main.java
-java -cp .:mysql-connector-j-9.0.0.jar Main
+## ⚙️ Requirements
+| Component | Version / Notes |
+|------------|----------------|
+| **JDK** | 8 or higher (17 recommended) |
+| **MySQL Server** | 8.x |
+| **MySQL Connector/J** | `.jar` file (example: mysql-connector-j-9.0.0.jar) |
 
-## Notes for evaluator
-- DB name: `ExpenseDB`
-- Change DB credentials in `Main.java` if needed (URL, USER, PASS)
+---
 
-## Author
-Name: Gopinath S
+## 🗄️ Files Included
+| File Name | Description |
+|------------|-------------|
+| `Main.java` | Main program with full CRUD + JDBC logic |
+| `Config.java` | Database connection credentials file |
+| `create_db.sql` | SQL script to create database & table |
+| `README.md` | Project documentation |
 
-Reg No: 421622104039
+---
 
-Dept: B.E CSE
+## 🧱 Database Details
+**Database Name:** `ExpenseDB`  
+**Table Name:** `Expenses`  
 
-College: Mailam Engineering College
+Run this SQL before executing the Java program:
+```sql
+CREATE DATABASE IF NOT EXISTS ExpenseDB;
+USE ExpenseDB;
 
-Project Title: Simple Budget and Expense Tracker using JDBC and MySQL
-
-
+CREATE TABLE IF NOT EXISTS Expenses (
+    expense_id INT AUTO_INCREMENT PRIMARY KEY,
+    description VARCHAR(255) NOT NULL,
+    amount DECIMAL(10,2) NOT NULL,
+    category VARCHAR(100),
+    expense_date DATE NOT NULL
+);
