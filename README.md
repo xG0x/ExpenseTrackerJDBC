@@ -27,5 +27,9 @@ java -cp .:mysql-connector-j-9.0.0.jar Main
 - Change DB credentials in `Main.java` if needed (URL, USER, PASS)
 
 ## Author
-Name: GOPINATH S
-Roll: 039
+Name: Gopinath S
+Reg No: 421622104039
+Dept: B.E CSE
+College: Mailam Engineering College
+Project Title: Simple Budget and Expense Tracker using JDBC and MySQL
+
